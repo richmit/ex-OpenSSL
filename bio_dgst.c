@@ -23,7 +23,7 @@ int main(int argc, char *argv[]) {
   /* Create a BIO objects */
   bio_stdin  = BIO_new_fp(stdin,  BIO_NOCLOSE);
 
-  /* Create a base64 filter and connect it to the bio_stdin */
+  /* Create a MD5 filter and connect it to the bio_stdin */
   bio_md5 = BIO_new(BIO_f_md());
   BIO_set_md(bio_md5, EVP_md5());
   bio_stdin = BIO_push(bio_md5, bio_stdin);
